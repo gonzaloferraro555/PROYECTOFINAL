@@ -38,22 +38,5 @@ class Receta(models.Model):
         return f"Nombre:{self.nombre} - Texto:{self.texto} - Email: {self.email} - Autor: {self.autor}"
    
 
-class Entregable(models.Model):
-    nombre = models.CharField(max_length=30)
-    fechaDeEntrega = models.DateField()
-    entregada = models.BooleanField()
-
-    def __str__(self):
-        return f"Nombre:{self.nombre} - Fecha de Entrega:{self.fechaDeEntrega} - Entregada: {self.entregada}"
- 
-
-
-class Familia(models.Model):
-    nombre = models.CharField(max_length=30)
-    relación = models.CharField(max_length=30)
-    fechaDeNacimiento = models.DateField()
-    Edad = models.IntegerField()
-
-    def __str__(self):
-        return f"Nombre:{self.nombre} - Relación:{self.relación} - Fecha de Nacimiento: {self.fechaDeNacimiento} - Edad: {self.Edad}"
- 
+class Imagen(models.Model):
+    imagen = models.ImageField()
