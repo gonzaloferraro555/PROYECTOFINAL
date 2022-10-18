@@ -6,8 +6,9 @@ from django.db import models
 
 
 # Create your models here.
+
 class Cocinero(models.Model):
-    imagen = models.ImageField()
+    imagen = "https://w7.pngwing.com/pngs/857/703/png-transparent-circle-white-black-font-empty-superman-logo-rim-black-and-white-empty-superman-logo-thumbnail.png"
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
     edad = models.IntegerField()
@@ -30,7 +31,7 @@ class Comentario(models.Model):
     #objeto Estudiante desde la web, sino que veré la información contenida.
 
 class Receta(models.Model):
-    imagen = models.ImageField()
+    imagen = "https://w7.pngwing.com/pngs/857/703/png-transparent-circle-white-black-font-empty-superman-logo-rim-black-and-white-empty-superman-logo-thumbnail.png"    
     nombre = models.CharField(max_length=30)
     texto = models.CharField(max_length=800)
     email = models.EmailField()
