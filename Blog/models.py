@@ -7,6 +7,7 @@ from django.db import models
 
 # Create your models here.
 class Cocinero(models.Model):
+    imagen = models.ImageField()
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
     edad = models.IntegerField()
@@ -15,7 +16,7 @@ class Cocinero(models.Model):
     #Hay una herencia en estas clases, tomando la clase
     #de models importado de django.
     def __str__(self):
-        return f"Nombre:{self.nombre} - Apellido:{self.apellid} - Edad: {self.edad} - Email: {self.email} - Experiencia: {self.Experiencia}"
+        return f"Foto:{self.imagen} - Nombre:{self.nombre} - Apellido:{self.apellid} - Edad: {self.edad} - Email: {self.email} - Experiencia: {self.Experiencia}"
    
 class Comentario(models.Model):
     texto = models.CharField(max_length=500)
@@ -29,13 +30,14 @@ class Comentario(models.Model):
     #objeto Estudiante desde la web, sino que veré la información contenida.
 
 class Receta(models.Model):
+    imagen = models.ImageField()
     nombre = models.CharField(max_length=30)
     texto = models.CharField(max_length=800)
     email = models.EmailField()
     autor = models.CharField(max_length=30)
 
     def __str__(self):
-        return f"Nombre:{self.nombre} - Texto:{self.texto} - Email: {self.email} - Autor: {self.autor}"
+        return f"Foto:{self.imagen} - Nombre:{self.nombre} - Texto:{self.texto} - Email: {self.email} - Autor: {self.autor}"
    
 
 class Imagen(models.Model):
