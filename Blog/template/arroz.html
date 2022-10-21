@@ -1,0 +1,29 @@
+<!--{% extends "home.html"%}-->
+<html>
+{% load static %}
+
+<!--{% block contenido %}-->
+<body class="d-flex h-100 text-center text-bg-dark"></body>
+    <div class="contenido1">
+        {% if recetas %}
+        <div>
+            <li class="nav-item" style="position: relative">
+                {{recetas.nombre}} 
+
+            <!--<img src="/ProyectoFinal/Blog/imagenes/arroz.jpg" alt="">
+            <li class="nav-item" style="position: relative">
+                {{recetas.nombre}}
+            <li>
+            <li>{{recetas.texto}}<li>
+            <li>{{recetas.email}}</li>
+            <li>{{recetas.autor}}</li>-->
+        </div>
+        {% endif%}
+    </div>
+        <footer class="mt-auto text-white-50">
+            <p>Recetas Gourmet </p>
+        </footer>
+    </div>
+</body>
+</html>
+<!--{% endblock %}-->
