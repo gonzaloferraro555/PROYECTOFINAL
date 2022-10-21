@@ -1,10 +1,43 @@
-.contenido1{
-    position: relative;
-    top: 60px;
-    border: 1px solid white;
+.texto{
+  font-size: 1.125rem;
+  text-anchor:start;
+  display: inline-block;
+  position:relative;
+  right:800px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.posicionim{
+  position:relative;
+  left: 500px;
+  right:auto;
 }
 
 
+.ubicado{
+  position: relative;
+  width: 1500px;
+  height: auto;
+  top: 0px;
+  font-size: 1.125rem;
+  text-anchor: middle;
+  
+}
+
+
+.contenido1{
+    position: relative;
+    top: 80px;
+    
+}
+
+.contenido2{
+  position: relative;
+  top: 60px;
+ 
+}
 
 .bd-placeholder-img {
     font-size: 1.125rem;
