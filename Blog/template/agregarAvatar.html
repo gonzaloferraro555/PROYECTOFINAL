@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
+    <title>Modificación de Avatar</title>
+</head>
+<body class="d-flex h-100 text-center text-bg-dark" style="position: relative; ">
+    <div class="fondo">    
+        <style> 
+            body { 
+                background-image: url("https://c0.wallpaperflare.com/preview/249/313/235/vegetales-alimentos-comida-verduras.jpg"); 
+                background-position: center 25%; 
+                background-size: cover; 
+            } 
+        </style> 
+        <form action="" method = "POST" style="position:absolute; left:300px;top:100px" enctype="multipart/form-data"> {%csrf_token%}
+            {{form.as_p}}<!--No necesito una tabla, sólo quiero ver una cosita-->
+            <input type="submit" value="Aceptar">
+        </form>
+    </div>   
+</body>
+</html>

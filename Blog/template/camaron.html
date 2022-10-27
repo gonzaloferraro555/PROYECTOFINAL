@@ -1,0 +1,72 @@
+{% extends "home.html"%}
+<html>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Profesionales</title>
+</head>
+
+{% block contenido %}
+<body class="d-flex h-100 text-center text-bg-dark" >
+      
+    <div class="contenido1">
+        <p class="nav-item" style="position: relative; font-size: large;">
+            <style> 
+                body { 
+                    background-image: url("https://img.freepik.com/fotos-premium/fondo-madera-oscura-textura-madera-negra-espacio-disenar-su-trabajo_330494-281.jpg?w=2000"); 
+                    background-position: center 25%; 
+                    background-size: cover; 
+                } 
+            </style>
+            {% if recetas %}
+                {% for r in recetas %}
+                    <p>
+                        {{r.nombre}}
+                    </p> 
+                    <p>
+                        Chef {{r.autor}}
+                    </p>
+                    <img src="{{r.imagen.url}}" style="float: right; margin: 0 0 1em 2em; position:relative; top:200px" height="400px" width= "500px" alt="" >
+                    <div class = "contenido2" style="position:relative;top:200px;">
+                        {{r.ingrediente}}
+                    </div>
+                    <div class = "contenido2" style="position:relative;top:300px;">
+                        {{r.texto}}
+                    </div>
+                {%endfor%}
+            {% endif %}
+            <div  style="position: absolute; top:800px;left:300px">
+                {% if comentarios %}
+                    {% for c in comentarios %}
+                        <div class="list-group">
+                            <div class="borde">
+                                <p class="contenido22" style="position:relative">Comentario: {{c.Comentario}}</p>
+                                <p class="contenido22" style="position:relative">Usuario: {{c.us}}</p>
+                                <a  href="/Blog/editar_camaron/{{c.id}}" class= "btn btn-outline-primary" style="position: relative;">Editar</a>
+                            </div>
+                        </div>
+                    {%endfor%}
+                {%endif%}
+            
+                <div style="position:relative;">
+                    <form style="position:relative; top:70px" method="POST">{% csrf_token %}
+                        <table style="position:relative">
+                            {{ formulario.as_table }}
+                        </table>
+                        <button class="btn btn-primary" style="position:relative; top:20px; text-decoration: none; color: white" type="submit">Comentar</button>
+                    </form>
+                </div>
+                <footer class="mt-auto text-white-50" style="position:relative;top:100px">
+                    <p>Recetas Gourmet </p>
+                </footer>
+            </div>
+        </p>              
+    </div>
+
+</body>
+
+
+</html>
+{% endblock %}

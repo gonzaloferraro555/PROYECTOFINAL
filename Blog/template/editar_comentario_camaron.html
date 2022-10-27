@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+{% load static %}
+{% block contenido %}
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
+<body class="d-flex h-100 text-center text-bg-dark" style="position: absolute; right: 600px; top: 200px;">
+    <style> 
+        body { 
+            background-image: url("https://fondosmil.com/fondo/56960.jpg"); 
+            background-position: center 25%; 
+            background-size: cover; 
+        } 
+    </style>
+    <div>
+        <form style="position:relative;" method="POST">{% csrf_token %}
+            <table style="position:relative;top:10px">
+                    {{ formulario.as_table }}
+            </table>
+            <button  class="btn btn-primary" style="position:relative;top:38px; left:20px; text-decoration: none; color: white" type="submit">Modificar</button>
+        </form>
+        <a href="/Blog/eliminar/{{com.id}}" class="btn btn-primary" style="position:relative;; text-decoration: none; color: white">Eliminar</a>
+        <a href="/Blog/camaron/" class="btn btn-primary" style="position:relative;top:50px;right:50px; text-decoration: none; color: white">Vuelve a tu receta</a>
+    </div>
+</body>
+{% endblock %}

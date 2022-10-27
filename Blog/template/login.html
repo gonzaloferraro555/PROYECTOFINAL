@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
+    <title>Iniciar Sesión</title>
+</head>
+<nav class="nav nav-masthead justify-content-center float-md-end">
+    <a class="btn btn-outline-primary" style="position: absolute; left:100px; top: -180px;" aria-current="page" href="/Blog/">Volver al Inicio</a>
+</nav>
+<body class="d-flex h-100 text-center text-bg-dark" style="position: absolute; right: 600px; top: 200px;" >
+    <form   method="POST" >
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <!--Viene con el formulario automatizado, por lo que no esnecesario el input-->
+        <button class="btn btn-primary" style="text-decoration: none; color: white" type= "submit" >Iniciar Sesión </button>
+        <!--Django tiene automatizado el rechazo de un loguin con credenciales
+        incorrectas.-->
+        <p></p>
+        <a class="btn btn-primary" aria-current="page" href="/Blog/registro/">Registrarse</a>
+    </form>   
+</body>
+</html>

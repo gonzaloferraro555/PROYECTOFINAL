@@ -1,0 +1,54 @@
+{% extends "home.html"%}
+<html>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Profesionales</title>
+</head>
+
+{% block contenido %}          
+<body class="d-flex h-100 text-center text-bg-dark" >
+            <style> 
+                body { 
+                    background-image: url("https://img.freepik.com/premium-photo/side-view-black-brick-wall-lit-by-light-from-window_160360-1283.jpg?w=2000"); 
+                    background-position: center 25%; 
+                    background-size: cover; 
+                } 
+            </style>
+            <div class="list-group-item" style="position: relative;left:300px"> 
+            <a class= "btn btn-outline-primary" style="position: relative;top:200px;" aria-current="page" href="/Blog/agregar_receta/">Agrega tu receta</a>
+     
+                {% if recetas %}
+                    {% for r in recetas %}
+                        <div style="position: relative; top:450px">  
+                            <p>
+                                Receta:  {{r.nombre}}
+                            </p> 
+                            <p >
+                                Cocinero:  {{r.autor}}
+                            </p>
+                            <div style="position: relative; top:40px">
+                                Ingredientes:
+                                {{r.ingrediente}}
+                            </div>
+                            <div class= "justify-content-center" style="position: relative; top:120px">                          
+                                Elaboración: {{r.texto}}
+                            </div>
+                            <div style="position: relative; top:180px">
+                                {{r.fecha}}
+                            </div>  
+                            <div class="list-group" style="position:relative; top:200px">
+                                <div class="borde">
+                                    <a  href="/Blog/editar_tus_recetas/{{r.id}}" class= "btn btn-outline-primary" style="position: relative;">Editar</a>
+                                </div>
+                            </div>
+                    {%endfor%}
+                {% endif %}    
+            <footer class="mt-auto text-white-50" style="position:relative;top:500px">
+                <p>Recetas Gourmet </p>
+            </footer>             
+</body>
+</html>
+{% endblock %}
